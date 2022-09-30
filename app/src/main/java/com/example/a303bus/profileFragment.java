@@ -39,7 +39,7 @@ public class profileFragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               System.exit(0);
+               requireActivity().finish();
             }
         });
 
