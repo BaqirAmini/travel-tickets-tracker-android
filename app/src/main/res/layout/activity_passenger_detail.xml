@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".passenger_detail">
+
+    <Button
+        android:id="@+id/btnsubmit"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="41dp"
+        android:background="@drawable/button"
+        android:drawablePadding="0dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/btnsubmit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edmmyy" />
+
+    <EditText
+        android:id="@+id/edname2"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/account"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+    <EditText
+        android:id="@+id/edphone2"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/phone"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edlastname" />
+
+    <EditText
+        android:id="@+id/edidcard"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/card"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/idcardno"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edphone2" />
+
+    <EditText
+        android:id="@+id/edmmyy"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/calender"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/my"
+        android:inputType="date"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edcvv" />
+
+    <EditText
+        android:id="@+id/edcvv"
+        android:layout_width="115dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="255dp"
+        android:background="@drawable/custom_input"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/cvv"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edcardno" />
+
+    <EditText
+        android:id="@+id/edcardno"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/card"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/Cardno"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group" />
+
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="223dp"
+        android:text="@string/passengerdetail"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="220dp"
+        android:text="@string/payment"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edidcard" />
+
+    <EditText
+        android:id="@+id/edlastname"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="41dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/account"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/lastname"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edname2" />
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail2">
+
+
+        <RadioButton
+            android:id="@+id/visa"
+            android:layout_width="76dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:drawableLeft="@drawable/ic_visa"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toEndOf="@+id/mastercard"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/mastercard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:drawableLeft="@drawable/ic_mastercard_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/cash"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="277dp"
+            tools:layout_editor_absoluteY="399dp" />
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

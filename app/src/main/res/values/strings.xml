@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">303bus</string>
+    <string name="sigintitel">Sign in</string>
+    <string name="signintitel2">Sign in to continue</string>
+    <string name="email">Email</string>
+    <string name="hintemail">email@example.com</string>
+    <string name="btnlogin">Login</string>
+    <string name="signinptitel3">Dont have an account? Sign up</string>
+    <string name="signuptitel">Sign Up</string>
+    <string name="signuptitel2">Sign in to join</string>
+    <string name="name">Username</string>
+    <string name="phone">07********</string>
+    <string name="pass">Password</string>
+    <string name="btnsignup">Sign up</string>
+    <string name="signuptitel3">have an account? Sign in</string>
+    <string name="hometitel">Book your Ticket</string>
+    <string name="subtitelhome">and enjoy your trip</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="date">Date</string>
+    <string name="search">Search</string>
+    <string name="depart">Depart</string>
+    <string name="price">Ticket price</string>
+    <string name="booknow">BOOK NOW</string>
+    <string name="from1">KABUL</string>
+    <string name="to1">HERAT</string>
+    <string name="passengerdetail">Passenger detail</string>
+    <string name="lastname">Last Name</string>
+    <string name="idcardno">ID card no</string>
+    <string name="payment">Payment</string>
+    <string name="Cardno">Card no</string>
+    <string name="cvv">CVV</string>
+    <string name="my">MM / YY</string>
+    <string name="btnsubmit">Submit</string>
+    <string name="forgotpassword">Forgot your password?</string>
+    <string name="txtforgotpassword">Enter your information below to </string>
+    <string name="txt2"> change your password.</string>
+    <string name="btncreate">Create</string>
+    <string name="title2">Back to login</string>
+    <string name="newpassword">New password</string>
+    <string name="Contactus">Contact us</string>
+    <string name="copyright">Copyright@ 2022 QGC Tech</string>
+    <string name="txtabout">Travel across Afghanistan by bus and book  </string>
+    <string name="txtabout2">ticket through the 303.af app
+        and  the app </string>
+    <string name="txtabout3"> developed by QGC tech.</string>
+    <string name="cash">Cash</string>
+    <string name="logout">Logout</string>
+    <string name="dt">departure time</string>
+    <string name="btndownload">Download</string>
+    <string name="time">Time</string>
+    <string name="btnadd">Add</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="totalsales">Total sales</string>
+    <string name="sales">30000 AFN</string>
+    <string name="totaltickets">Total tickets</string>
+    <string name="tickets">30</string>
+    <string name="addnew">Add new Ticket</string>
+    <string name="searchtitel">Search a ticket</string>
+    <string name="subtitelsearch">for updating and deleting</string>
+    <string name="hinttc">Transport Company</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
