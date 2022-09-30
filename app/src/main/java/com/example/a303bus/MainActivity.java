@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,9 +20,10 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edemail, edpassword;
-    Button btnlogin;
-    String email, password;
+    EditText edemail,edpassword;
+    Button btnlogin,btnadmin;
+    String email,password;
+    ImageView admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnlogin = findViewById(R.id.btnlogin);
+        btnadmin = findViewById(R.id.btnadmin);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,12 +61,19 @@ public class MainActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 onValidate();
+            }
+        });
+        btnadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,admin_login.class);
+                startActivity(i);
             }
         });
 
     }
+
 
     //    Validate to not allow click the log in button without values.
     public void onValidate() {

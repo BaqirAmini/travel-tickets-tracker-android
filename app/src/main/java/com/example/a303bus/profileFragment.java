@@ -19,7 +19,7 @@ public class profileFragment extends Fragment {
     TextView name, email, phone;
     String myname, myemail;
     int myphone;
-    Button logout;
+    Button logout, btnAdmin, btnLogin;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +29,11 @@ public class profileFragment extends Fragment {
         email = (TextView) view.findViewById(R.id.txtemail);
         phone = (TextView) view.findViewById(R.id.txtphone);
         logout = (Button) view.findViewById(R.id.logout3);
+//        Hide these two buttons to not display on Fragment of profile.
+        btnAdmin = requireActivity().findViewById(R.id.btnadmin);
+        btnAdmin.setVisibility(View.GONE);
+        btnLogin = requireActivity().findViewById(R.id.btnlogin);
+        btnLogin.setVisibility(View.GONE);
 
         Bundle bundle = this.getArguments();
         assert bundle != null;

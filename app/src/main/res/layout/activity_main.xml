@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <TextView
@@ -64,9 +64,9 @@
     <Button
         android:id="@+id/btnlogin"
         android:layout_width="330dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/button"
         android:fontFamily="sans-serif"
@@ -75,8 +75,9 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edpass" />
+        app:layout_constraintTop_toBottomOf="@+id/forgotpss" />
 
     <EditText
         android:id="@+id/edemail"
@@ -104,10 +105,10 @@
         android:layout_width="348dp"
         android:layout_height="278dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titel1"
         app:srcCompat="@drawable/signin3" />
@@ -140,5 +141,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
 
+    <Button
+        android:id="@+id/btnadmin"
+        android:layout_width="79dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="42dp"
+        android:drawableLeft="@drawable/admin2"
+        android:text="@string/admin"
+        android:textColor="@color/white"
+        android:textSize="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toEndOf="@+id/titel1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

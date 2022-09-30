@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="@color/white"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/adminedpass"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/lock"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/pass"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminedemail" />
+
+    <Button
+        android:id="@+id/btnloginadmin"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/button"
+        android:fontFamily="sans-serif"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminedpass" />
+
+    <EditText
+        android:id="@+id/adminedemail"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="395dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/email"
+        android:focusable="true"
+        android:fontFamily="sans-serif"
+        android:hint="@string/hintemail"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="158dp"
+        android:text="@string/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnloginadmin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
