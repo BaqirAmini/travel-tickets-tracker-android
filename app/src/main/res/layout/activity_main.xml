@@ -148,7 +148,6 @@
         android:layout_marginStart="176dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="42dp"
-        android:drawableLeft="@drawable/admin2"
         android:text="@string/admin"
         android:textColor="@color/white"
         android:textSize="5sp"

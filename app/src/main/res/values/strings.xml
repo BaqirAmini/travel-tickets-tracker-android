@@ -8,12 +8,13 @@
     <string name="signinptitel3">Dont have an account? Sign up</string>
     <string name="signuptitel">Sign Up</string>
     <string name="signuptitel2">Sign in to join</string>
-    <string name="name">Username</string>
+    <string name="not_admin">I am not an admin.</string>
     <string name="phone">07********</string>
     <string name="pass">Password</string>
     <string name="btnsignup">Sign up</string>
     <string name="signuptitel3">have an account? Sign in</string>
     <string name="hometitel">Book your Ticket</string>
+    <string name="name">Username</string>
     <string name="subtitelhome">and enjoy your trip</string>
     <string name="from">From</string>
     <string name="to">To</string>
