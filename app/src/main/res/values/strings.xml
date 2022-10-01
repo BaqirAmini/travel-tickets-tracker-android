@@ -21,7 +21,7 @@
     <string name="date">Date</string>
     <string name="search">Search</string>
     <string name="depart">Depart</string>
-    <string name="price">Ticket price</string>
+    <string name="price">Ticket price (AFN)</string>
     <string name="booknow">BOOK NOW</string>
     <string name="from1">KABUL</string>
     <string name="to1">HERAT</string>

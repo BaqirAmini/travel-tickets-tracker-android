@@ -1,14 +1,12 @@
 package com.example.a303bus;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +53,11 @@ public class admin_login extends AppCompatActivity {
                         String admin_email = cursor.getString(cursor.getColumnIndexOrThrow("admin_email"));
                         String admin_name = cursor.getString(cursor.getColumnIndexOrThrow("admin_name"));
                         Intent intent = new Intent(admin_login.this, admin.class);
+                        AdminInfo admin = new AdminInfo();
+                        admin.setAdminID(admin_id);
+                        admin.setAdminEmail(admin_email);
+                        admin.setAdminName(admin_name);
+//                        Toast.makeText(admin_login.this, "admin login: " + admin_id, Toast.LENGTH_SHORT).show();
                         intent.putExtra("ADMIN_ID", admin_id);
                         intent.putExtra("ADMIN_EMAIL", admin_email);
                         intent.putExtra("ADMIN_NAME", admin_name);
