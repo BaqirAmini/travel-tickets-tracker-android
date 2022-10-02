@@ -2,7 +2,9 @@ package com.example.a303bus;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
@@ -48,6 +50,15 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
 //        holder.depTctPrice.setText((int) Double.parseDouble(String.valueOf(modal.getTicketPrice())));
         holder.tctCompName.setText(modal.getTicketCompany());
 
+        //Update contents of any card
+        holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+//        Delete a ticket by admin.
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
@@ -58,15 +69,12 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
                     String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
                     SQLiteDatabase db = SQLiteDatabase.openDatabase(desPath + "/303bus_db.sqlite", null, 0);
                     int deleted = db.delete("tickets", "ticket_ID = ?", new String[]{String.valueOf(ticketId)});
-                    if (deleted != -1)
-                    {
+                    if (deleted != -1) {
                         ticketsList.get(holder.getAdapterPosition());
                         ticketsList.remove(holder.getAdapterPosition());
                         notifyDataSetChanged();
                         Toast.makeText(context, "The ticket deleted." + deleted, Toast.LENGTH_SHORT).show();
                     }
-
-
                 } catch (Exception e) {
                     Log.e("DELETE_ERROR", "Cannot delete from tickets: " + e.getMessage());
                 }
@@ -116,13 +124,6 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
             btnUpdate = itemView.findViewById(R.id.btnupdete);
             btnDelete = itemView.findViewById(R.id.btndelete);
 
-//            Update contents of any card
-            btnUpdate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Updating...", Toast.LENGTH_SHORT).show();
-                }
-            });
 
         }
     }

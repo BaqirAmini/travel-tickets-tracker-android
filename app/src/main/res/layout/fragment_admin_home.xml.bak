@@ -25,33 +25,21 @@
 
         <Button
             android:id="@+id/btnadd"
-            android:layout_width="127dp"
-            android:layout_height="51dp"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="69dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="45dp"
             android:background="@color/blue"
             android:fontFamily="sans-serif"
             android:text="@string/btnadd"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtdate2" />
-
-        <Button
-            android:id="@+id/btnudate2"
-            android:layout_width="127dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="228dp"
-            android:layout_marginTop="68dp"
-            android:background="@color/blue"
-            android:fontFamily="sans-serif"
-            android:text="Update"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtdate2" />
+            app:layout_constraintTop_toBottomOf="@+id/txttime" />
 
         <EditText
             android:id="@+id/edfrom"
