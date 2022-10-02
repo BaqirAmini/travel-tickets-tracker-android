@@ -63,5 +63,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="admin">Admin</string>
+    <string name="updateByAdmin">Update</string>
+    <string name="deleteByAdmin">Delete</string>
+    <string name="no_tickets_found">No Tickets Found!</string>
 
 </resources>

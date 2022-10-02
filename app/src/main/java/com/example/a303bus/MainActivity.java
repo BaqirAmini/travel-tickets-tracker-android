@@ -2,27 +2,34 @@ package com.example.a303bus;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.FragmentManager;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edemail,edpassword;
-    Button btnlogin,btnadmin;
-    String email,password;
+    EditText edemail, edpassword;
+    Button btnlogin, btnadmin;
+    String email, password;
     ImageView admin;
 
     @Override
@@ -67,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         btnadmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this, admin_login.class);
+                Intent i = new Intent(MainActivity.this, admin_login.class);
                 startActivity(i);
             }
         });
@@ -125,4 +132,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 }

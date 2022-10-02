@@ -144,7 +144,7 @@
     <Button
         android:id="@+id/btnadmin"
         android:layout_width="79dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:layout_marginStart="176dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="42dp"
