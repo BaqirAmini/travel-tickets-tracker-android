@@ -68,7 +68,6 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
                intent.putExtra("TO", modal.getToWhere());
                intent.putExtra("PRICE", modal.getTicketPrice()+"");
                intent.putExtra("COMPANY", modal.getTicketCompany());
-                Toast.makeText(context, "Price is " + modal.getTicketPrice(), Toast.LENGTH_SHORT).show();
                view.getContext().startActivity(intent);
             }
         });

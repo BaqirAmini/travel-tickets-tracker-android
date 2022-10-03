@@ -21,7 +21,7 @@ public class admin extends AppCompatActivity {
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
-        int adminId = Integer.parseInt(intent.getExtras().getString("ADMIN_ID"));
+        int adminId = intent.getIntExtra("ADMIN_ID", 0);
         Bundle b = new Bundle();
         b.putString("ADMIN_ID", adminId+"");
         admin_home adminHome = new admin_home();
