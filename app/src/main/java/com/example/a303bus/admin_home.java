@@ -33,7 +33,7 @@ public class admin_home extends Fragment {
     EditText edfrom, edto, edtp, edtc;
     Button btnadd;
     TextView txttime, txtdate;
-    String date, time, fromWhere, toWhere, tctPrice0, tctComp;
+    String date, time, fromWhere, toWhere, tctPrice0, tctComp, dDate, dTime;
     String adminID, dateFormat, depTime;
 
     @Override
@@ -114,8 +114,10 @@ public class admin_home extends Fragment {
         fromWhere = edfrom.getText().toString();
         toWhere = edto.getText().toString();
         tctPrice0 = edtp.getText().toString();
-//        double tctPrice = Double.parseDouble(edtp.getText().toString());
         tctComp = edtc.getText().toString();
+//        double tctPrice = Double.parseDouble(edtp.getText().toString());
+        dDate = txtdate.getText().toString();
+        dTime = txttime.getText().toString();
         if (!fromWhere.isEmpty() && !toWhere.isEmpty() && !tctComp.isEmpty()) {
             if (fromWhere.length() < 4) {
                 edfrom.setError("It must be at least 4 characters.");
@@ -156,14 +158,22 @@ public class admin_home extends Fragment {
                     Toast.makeText(getActivity(), "Ticket added successfully!", Toast.LENGTH_LONG).show();
                     edfrom.setText("");
                     edto.setText("");
+                    edto.setText("");
                     edtp.setText("");
-                    edtp.setText("");
+                    edtc.setText("");
+                   
                 } catch (Exception e)
                 {
                     Log.e("INSERT_ERROR", "Cannot insert into tickets because " + e.getMessage());
                 }
             }
         } else {
+            if (dDate.isEmpty() || !dDate.equals(dateFormat)) {
+                txtdate.setError("Pick a date.");
+            }
+            if (dTime.isEmpty() || !dTime.equals(depTime)) {
+                txttime.setError("Pick a time.");
+            }
             if (fromWhere.isEmpty()) {
                 edfrom.setError("From place required.");
             }
