@@ -5,9 +5,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.File;
@@ -54,7 +60,19 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
         holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               Intent intent = new Intent(context, admin.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+               context.startActivity(intent);
 
+//                AlertDialog.Builder builder = new AlertDialog.Builder(context.getApplicationContext());
+//                builder.setTitle("Testing Title");
+//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        Toast.makeText(context, "Something...", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//                builder.show();
             }
         });
 

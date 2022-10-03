@@ -34,7 +34,7 @@ public class admin_home extends Fragment {
     Button btnadd;
     TextView txttime, txtdate;
     String date, time, fromWhere, toWhere, tctPrice0, tctComp;
-    String adminID, dateFormat, depDate;
+    String adminID, dateFormat, depTime;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,7 +95,7 @@ public class admin_home extends Fragment {
         @SuppressLint("SetTextI18n")
         @Override
         public void onDateSet(DatePicker view, int year, int month, int day) {
-            dateFormat = year + "-" + (month + 1) + "-" + day;
+            dateFormat = String.format(Locale.getDefault(), "%02d-%02d-%02d", year, month+1, day);
             txtdate.setText(dateFormat);
         }
 
@@ -103,8 +103,8 @@ public class admin_home extends Fragment {
     TimePickerDialog.OnTimeSetListener timeset = new TimePickerDialog.OnTimeSetListener() {
         @Override
         public void onTimeSet(TimePicker view, int hour, int min) {
-            depDate = String.format(Locale.getDefault(),"%02d:%02d", hour, min);
-            txttime.setText(depDate);
+            depTime = String.format(Locale.getDefault(),"%02d:%02d", hour, min);
+            txttime.setText(depTime);
         }
     };
 
@@ -150,7 +150,7 @@ public class admin_home extends Fragment {
                     values.put("transport_company", tctComp);
                     values.put("ticket_NO", String.format(Locale.getDefault(), "%06d", tick_num));
                     values.put("dep_date", dateFormat);
-                    values.put("dep_time", depDate);
+                    values.put("dep_time", depTime);
 
                     bus_db.insertOrThrow("tickets", null, values);
                     Toast.makeText(getActivity(), "Ticket added successfully!", Toast.LENGTH_LONG).show();

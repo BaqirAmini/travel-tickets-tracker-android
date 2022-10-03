@@ -62,6 +62,8 @@ public class admin_login extends AppCompatActivity {
                         intent.putExtra("ADMIN_EMAIL", admin_email);
                         intent.putExtra("ADMIN_NAME", admin_name);
                         startActivity(intent);
+                        email.setText("");
+                        pass.setText("");
 
                     } else {
                         Toast.makeText(admin_login.this, "Sorry, wrong email or password!", Toast.LENGTH_SHORT).show();

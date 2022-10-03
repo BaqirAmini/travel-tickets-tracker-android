@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.a303bus.TicketsDataModel;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
@@ -47,7 +48,11 @@ public class TicketsListActivity extends AppCompatActivity implements SearchView
 
     @SuppressLint("NotifyDataSetChanged")
     private void loadTicketsData() {
-
+        Intent schIntent = getIntent();
+        String fromWhere = schIntent.getStringExtra("FROM_WHERE");
+        String toWhere = schIntent.getStringExtra("TO_WHERE");
+        String depDate = schIntent.getStringExtra("DEP_DATE");
+        String searchQuery = "SELECT * FROM tickets WHERE source LIKE '%" + fromWhere + "%' AND destination LIKE '%" + toWhere + "%' AND dep_date = '" + depDate + "';";
         try {
             if (Build.VERSION.SDK_INT >= 23) {
                 ExternalStoragePermission.verifyStoragePermissions(this);
@@ -56,7 +61,7 @@ public class TicketsListActivity extends AppCompatActivity implements SearchView
             String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
 
             SQLiteDatabase db = SQLiteDatabase.openDatabase(desPath + "/303bus_db.sqlite", null, 0);
-            Cursor cursor = db.rawQuery("SELECT * FROM tickets", null);
+            Cursor cursor = db.rawQuery(searchQuery, null);
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
                 do {
@@ -75,7 +80,7 @@ public class TicketsListActivity extends AppCompatActivity implements SearchView
                 ticketsRV.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             } else {
-                Toast.makeText(this, "No tickets found!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry, no such tickets found!: ", Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {
