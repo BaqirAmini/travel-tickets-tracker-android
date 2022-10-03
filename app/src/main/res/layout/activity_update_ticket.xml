@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="@color/white"
+    tools:context=".UpdateTicketActivity">
+    <TextView
+        android:id="@+id/titlehome2"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Update a Ticket"
+        android:textColor="@color/blue"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnupdate2"
+        android:layout_width="301dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="64dp"
+        android:background="@color/blue"
+        android:fontFamily="sans-serif"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtdate2" />
+
+    <EditText
+        android:id="@+id/edfrom"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/ic_baseline_directions_bus_24"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/hinttc"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtp" />
+
+    <EditText
+        android:id="@+id/edtp"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/money"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/price"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edto" />
+
+    <EditText
+        android:id="@+id/from"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/location"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/from"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlehome2" />
+
+    <EditText
+        android:id="@+id/edto"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/location"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="@string/to"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from" />
+
+    <TextView
+        android:id="@+id/txttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/time"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtdate2"
+        app:layout_constraintTop_toBottomOf="@+id/edfrom" />
+
+    <TextView
+        android:id="@+id/txtdate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/date"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edfrom" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
