@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.lang.Double;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,26 +54,22 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
         holder.depPlaceName.setText(modal.getFromWhere());
         holder.depTime.setText(modal.getDepDate().concat(" At ").concat(modal.getDepTime()));
         holder.depToPlaceName.setText(modal.getToWhere());
-//        holder.depTctPrice.setText((int) Double.parseDouble(String.valueOf(modal.getTicketPrice())));
+        holder.depTctPrice.setText(modal.getTicketPrice() + "".concat(" AFN"));
         holder.tctCompName.setText(modal.getTicketCompany());
 
         //Update contents of any card
         holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(context, admin.class);
+               Intent intent = new Intent(view.getContext(), UpdateTicketActivity.class);
                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-               context.startActivity(intent);
-
-//                AlertDialog.Builder builder = new AlertDialog.Builder(context.getApplicationContext());
-//                builder.setTitle("Testing Title");
-//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        Toast.makeText(context, "Something...", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//                builder.show();
+               intent.putExtra("TICKET_ID", modal.getTicketID());
+               intent.putExtra("FROM", modal.getFromWhere());
+               intent.putExtra("TO", modal.getToWhere());
+               intent.putExtra("PRICE", modal.getTicketPrice()+"");
+               intent.putExtra("COMPANY", modal.getTicketCompany());
+                Toast.makeText(context, "Price is " + modal.getTicketPrice(), Toast.LENGTH_SHORT).show();
+               view.getContext().startActivity(intent);
             }
         });
 
@@ -136,7 +133,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
             depToLbl = itemView.findViewById(R.id.txtto);
             depToPlaceName = itemView.findViewById(R.id.txtto1);
             depTctPriceLbl = itemView.findViewById(R.id.txtfrom4);
-            depTctPrice = itemView.findViewById(R.id.txtprice);
+            depTctPrice = itemView.findViewById(R.id.txt_price_value);
             tctCompLbl = itemView.findViewById(R.id.txttc);
             tctCompName = itemView.findViewById(R.id.txttc2);
             btnUpdate = itemView.findViewById(R.id.btnupdete);

@@ -9,7 +9,7 @@
     android:backgroundTint="@color/white"
     tools:context=".UpdateTicketActivity">
     <TextView
-        android:id="@+id/titlehome2"
+        android:id="@+id/ticket_update_heading"
         android:layout_width="284dp"
         android:layout_height="57dp"
         android:layout_marginStart="60dp"
@@ -30,16 +30,16 @@
         android:layout_marginEnd="64dp"
         android:background="@color/blue"
         android:fontFamily="sans-serif"
-        android:text="Update"
+        android:text="@string/btn_update_ticket"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtdate2" />
+        app:layout_constraintTop_toBottomOf="@+id/ticket_dep_date_update" />
 
     <EditText
-        android:id="@+id/edfrom"
+        android:id="@+id/ticket_update_tct_comp"
         android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
@@ -57,10 +57,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtp" />
+        app:layout_constraintTop_toBottomOf="@+id/ticket_update_price" />
 
     <EditText
-        android:id="@+id/edtp"
+        android:id="@+id/ticket_update_price"
         android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
@@ -71,16 +71,16 @@
         android:ems="10"
         android:fontFamily="sans-serif"
         android:hint="@string/price"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal|number|numberSigned"
         android:paddingLeft="10dp"
         android:textColor="@color/blue"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edto" />
+        app:layout_constraintTop_toBottomOf="@+id/ticket_update_to" />
 
     <EditText
-        android:id="@+id/from"
+        android:id="@+id/ticket_update_from"
         android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
@@ -90,17 +90,17 @@
         android:drawableLeft="@drawable/location"
         android:ems="10"
         android:fontFamily="sans-serif"
-        android:hint="@string/from"
+        android:hint="@string/ticket_update_from"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:textColor="@color/blue"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titlehome2" />
+        app:layout_constraintTop_toBottomOf="@+id/ticket_update_heading" />
 
     <EditText
-        android:id="@+id/edto"
+        android:id="@+id/ticket_update_to"
         android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
@@ -116,10 +116,10 @@
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/from" />
+        app:layout_constraintTop_toBottomOf="@+id/ticket_update_from" />
 
     <TextView
-        android:id="@+id/txttime"
+        android:id="@+id/ticket_dep_time_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
@@ -128,11 +128,11 @@
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/txtdate2"
-        app:layout_constraintTop_toBottomOf="@+id/edfrom" />
+        app:layout_constraintStart_toEndOf="@+id/ticket_dep_date_update"
+        app:layout_constraintTop_toBottomOf="@+id/ticket_update_tct_comp" />
 
     <TextView
-        android:id="@+id/txtdate2"
+        android:id="@+id/ticket_dep_date_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -142,7 +142,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edfrom" />
+        app:layout_constraintTop_toBottomOf="@+id/ticket_update_tct_comp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

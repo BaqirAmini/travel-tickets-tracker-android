@@ -25,31 +25,18 @@
 
         <Button
             android:id="@+id/btnadd"
-            android:layout_width="127dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="69dp"
-            android:background="@color/blue"
-            android:fontFamily="sans-serif"
-            android:text="@string/btnadd"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtdate2" />
-
-        <Button
-            android:id="@+id/btnudate2"
-            android:layout_width="127dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="228dp"
+            android:layout_width="301dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="46dp"
             android:layout_marginTop="68dp"
+            android:layout_marginEnd="64dp"
             android:background="@color/blue"
             android:fontFamily="sans-serif"
-            android:text="Update"
+            android:text="@string/btn_add_ticket"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtdate2" />
 

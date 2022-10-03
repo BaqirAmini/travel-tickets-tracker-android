@@ -52,11 +52,11 @@ public class TicketsListActivity extends AppCompatActivity implements SearchView
         String fromWhere = schIntent.getStringExtra("FROM_WHERE");
         String toWhere = schIntent.getStringExtra("TO_WHERE");
         String depDate = schIntent.getStringExtra("DEP_DATE");
-        String searchQuery = "SELECT * FROM tickets WHERE source LIKE '%" + fromWhere + "%' AND destination LIKE '%" + toWhere + "%' AND dep_date = '" + depDate + "';";
         try {
             if (Build.VERSION.SDK_INT >= 23) {
                 ExternalStoragePermission.verifyStoragePermissions(this);
             }
+            String searchQuery = "SELECT * FROM tickets WHERE source LIKE '%" + fromWhere + "%' AND destination LIKE '%" + toWhere + "%' AND dep_date = '" + depDate + "';";
             File inStorage = getBaseContext().getExternalFilesDir(null);
             String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
 

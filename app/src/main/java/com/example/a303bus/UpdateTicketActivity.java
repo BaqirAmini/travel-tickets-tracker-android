@@ -2,8 +2,10 @@ package com.example.a303bus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -21,28 +24,35 @@ public class UpdateTicketActivity extends AppCompatActivity {
     TextView txttime, txtdate;
     String date, time;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_ticket);
         getSupportActionBar().hide();
-        btnupdate = (Button) findViewById(R.id.btnupdate2);
+        btnupdate =  findViewById(R.id.btnupdate2);
 
-        edfrom = (EditText) findViewById(R.id.from);
+        edfrom = (EditText) findViewById(R.id.ticket_update_from);
         String from = edfrom.getText().toString();
-        edto = (EditText) findViewById(R.id.edto);
+        edto = (EditText) findViewById(R.id.ticket_update_to);
         String to = edto.getText().toString();
-        edtp = (EditText) findViewById(R.id.edtp);
+        edtp = (EditText) findViewById(R.id.ticket_update_price);
         String tp = edtp.getText().toString();
-        edtc = (EditText) findViewById(R.id.edfrom);
+        edtc = (EditText) findViewById(R.id.ticket_update_tct_comp);
         String tc = edtc.getText().toString();
 
-        txtdate = (TextView) findViewById(R.id.txtdate2);
+        txtdate = (TextView) findViewById(R.id.ticket_dep_date_update);
         date = txtdate.getText().toString();
 
-        txttime = (TextView) findViewById(R.id.txttime);
+        txttime = (TextView) findViewById(R.id.ticket_dep_time_update);
         time = txttime.getText().toString();
 
+//        Get ticket details from intent for updating
+        Intent tctIntent = getIntent();
+        edfrom.setText(tctIntent.getStringExtra("FROM"));
+        edto.setText(tctIntent.getStringExtra("TO"));
+        edtp.setText(tctIntent.getStringExtra("PRICE"));
+        edtc.setText(tctIntent.getStringExtra("COMPANY"));
 
         txtdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +77,12 @@ public class UpdateTicketActivity extends AppCompatActivity {
             }
         });
 
+        btnupdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(UpdateTicketActivity.this, "Updating now...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

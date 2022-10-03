@@ -66,5 +66,8 @@
     <string name="updateByAdmin">Update</string>
     <string name="deleteByAdmin">Delete</string>
     <string name="no_tickets_found">No Tickets Found!</string>
+    <string name="btn_add_ticket">Add</string>
+    <string name="btn_update_ticket">Update</string>
+    <string name="ticket_update_from">From</string>
 
 </resources>
