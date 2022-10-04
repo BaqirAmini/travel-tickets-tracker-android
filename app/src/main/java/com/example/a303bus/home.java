@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -17,7 +18,7 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame,fragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_for_user,fragment).commit();
         BottomNavigationView bnb=findViewById(R.id.bottom_nav_bar);
         bnb.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -33,7 +34,7 @@ public class home extends AppCompatActivity {
                         fragment=new aboutFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame,fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_for_user,fragment).commit();
                 return true;
             }
         });

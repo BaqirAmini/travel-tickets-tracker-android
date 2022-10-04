@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
 
             SQLiteDatabase db = SQLiteDatabase.openDatabase(desPath + "/303bus_db.sqlite", null, 0);
-            Cursor cursor = db.rawQuery("SELECT * FROM users WHERE email = '" + email + "' AND password = '" + pwd + "'", null);
+            Cursor cursor = db.rawQuery("SELECT * FROM users WHERE email = '" + email.trim() + "' AND password = '" + pwd.trim() + "'", null);
             cursor.moveToFirst();
 
             if (cursor.getCount() > 0) {
@@ -114,17 +114,13 @@ public class MainActivity extends AppCompatActivity {
                 String user_name = cursor.getString(cursor.getColumnIndexOrThrow("user_name"));
                 String user_email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
 
-                profileFragment pf = new profileFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("user_role", user_role);
-                bundle.putString("user_name", user_name);
-                bundle.putString("user_email", user_email);
-                bundle.putString("user_phone", user_phone);
-                pf.setArguments(bundle);
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frag_profile, pf);
-                ft.addToBackStack(null);
-                ft.commit();
+                edemail.setText("");
+                edpassword.setText("");
+                Intent intent = new Intent(MainActivity.this, home.class);
+                intent.putExtra("USER_NAME", user_name);
+                intent.putExtra("USER_EMAIL", user_email);
+                intent.putExtra("USER_PHONE", user_phone);
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Sorry, wrong email or password!", Toast.LENGTH_SHORT).show();
 

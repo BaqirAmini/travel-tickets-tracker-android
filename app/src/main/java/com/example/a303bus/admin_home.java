@@ -161,7 +161,7 @@ public class admin_home extends Fragment {
                     edto.setText("");
                     edtp.setText("");
                     edtc.setText("");
-                   
+
                 } catch (Exception e)
                 {
                     Log.e("INSERT_ERROR", "Cannot insert into tickets because " + e.getMessage());

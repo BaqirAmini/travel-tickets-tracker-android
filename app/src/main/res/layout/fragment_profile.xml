@@ -69,10 +69,10 @@
 
         <Button
             android:id="@+id/logout3"
-            android:layout_width="373dp"
-            android:layout_height="52dp"
+            android:layout_width="367dp"
+            android:layout_height="74dp"
             android:layout_marginStart="23dp"
-            android:layout_marginTop="328dp"
+            android:layout_marginTop="200dp"
             android:layout_marginEnd="295dp"
             android:text="logout"
             android:textColor="@color/white"
