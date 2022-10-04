@@ -4,7 +4,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="390dp"
@@ -24,7 +24,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
            android:layout_height="match_parent">
 
            <TextView
-               android:id="@+id/txtfrom"
+               android:id="@+id/txt_from_lbl"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginStart="68dp"
@@ -36,7 +36,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                app:layout_constraintTop_toTopOf="parent" />
 
            <TextView
-               android:id="@+id/txtfrom4"
+               android:id="@+id/txt_price_lbl"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginTop="19dp"
@@ -45,66 +45,66 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                android:textColor="@color/white"
                android:textSize="20sp"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtto1" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_to_val" />
 
            <TextView
-               android:id="@+id/txtdep"
+               android:id="@+id/txt_from_ddatetime"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginStart="44dp"
                android:text="1:00 PM"
                android:textColor="@color/white"
-               android:textSize="30sp"
+               android:textSize="15sp"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtfrom6" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_from_dep_lbl" />
 
            <TextView
-               android:id="@+id/txtprice"
+               android:id="@+id/txt_price_amount"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginEnd="44dp"
                android:text="800 AFN"
                android:textColor="@color/white"
-               android:textSize="30sp"
+               android:textSize="18sp"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtfrom4" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_price_lbl" />
 
            <TextView
-               android:id="@+id/txtfrom6"
+               android:id="@+id/txt_from_dep_lbl"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginStart="53dp"
                android:layout_marginTop="19dp"
                android:text="departure"
                android:textColor="@color/white"
-               android:textSize="20sp"
+               android:textSize="18sp"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtfrom2" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_from_val" />
 
            <TextView
-               android:id="@+id/txtfrom2"
+               android:id="@+id/txt_from_val"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginStart="52dp"
                android:text="Kabul"
                android:textColor="@color/white"
-               android:textSize="30sp"
+               android:textSize="20sp"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtfrom" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_from_lbl" />
 
            <TextView
-               android:id="@+id/txtto1"
+               android:id="@+id/txt_to_val"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginEnd="68dp"
                android:text="Belkh"
                android:textColor="@color/white"
-               android:textSize="30sp"
+               android:textSize="20sp"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtto" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_to_lbl" />
 
            <TextView
-               android:id="@+id/txtto"
+               android:id="@+id/txt_to_lbl"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginTop="16dp"
@@ -116,14 +116,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                app:layout_constraintTop_toTopOf="parent" />
 
            <Button
-               android:id="@+id/btnbook"
+               android:id="@+id/btn_book_by_user"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginTop="10dp"
                android:layout_marginEnd="138dp"
                android:text="@string/booknow"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/txtdep" />
+               app:layout_constraintTop_toBottomOf="@+id/txt_from_ddatetime" />
 
 
        </androidx.constraintlayout.widget.ConstraintLayout>

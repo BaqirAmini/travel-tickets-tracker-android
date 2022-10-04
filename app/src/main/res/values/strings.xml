@@ -14,7 +14,8 @@
     <string name="btnsignup">Sign up</string>
     <string name="signuptitel3">have an account? Sign in</string>
     <string name="hometitel">Book your Ticket</string>
-    <string name="name">Username</string>
+    <string name="username">Username</string>
+    <string name="name">First Name</string>
     <string name="subtitelhome">and enjoy your trip</string>
     <string name="from">From</string>
     <string name="to">To</string>
