@@ -129,6 +129,19 @@ public class passenger_detail extends AppCompatActivity {
             edmmyy.setError("The card exp date must be MM/YY.");
         }
 
-
+        if (!firstName.isEmpty()
+                && !(firstName.length() < 3)
+                && !phone.isEmpty()
+                && !cvv.isEmpty()
+                && !tazkiraID.isEmpty()
+                && !eCard.isEmpty()
+                && !dateInput.isEmpty()
+                && !(phone.length() < 10 || phone.length() > 13)
+                && (tazkiraID.length() == 13)
+                && eCard.length() == 16
+                && !(cvv.length() < 3 || cvv.length() > 4)
+                && formattedDate) {
+            Toast.makeText(this, "Now validated!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
