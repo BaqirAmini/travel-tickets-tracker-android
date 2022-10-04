@@ -49,6 +49,7 @@ public class TicketsBookAdapter extends RecyclerView.Adapter<TicketsBookAdapter.
                Intent intent = new Intent(view.getContext(), passenger_detail.class);
                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                intent.putExtra("TICKET_ID", modal.getTicketID());
+               intent.putExtra("USER_ID", modal.getUserID());
                view.getContext().startActivity(intent);
             }
         });

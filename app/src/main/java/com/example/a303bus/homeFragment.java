@@ -26,7 +26,7 @@ public class homeFragment extends Fragment {
     Button btnSearchUser;
     EditText edUserFrom,edUserTo;
     TextView txtUserDate;
-    String dateUserVal, formattedDate;
+    String dateUserVal, formattedDate, userIDForTicket;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class homeFragment extends Fragment {
                 if (!edfrom.isEmpty() && !edto.isEmpty() && (!dateUserVal.isEmpty() || dateUserVal.equals(formattedDate)))
                 {
                     Intent searchIntent = new Intent(getActivity(), BookTicketsActivity.class);
+                    searchIntent.putExtra("USER_ID", userIDForTicket);
                     searchIntent.putExtra("FROM_WHERE", edfrom);
                     searchIntent.putExtra("TO_WHERE", edto);
                     searchIntent.putExtra("DEP_DATE", dateUserVal);
@@ -96,7 +97,7 @@ public class homeFragment extends Fragment {
     {
         try {
             Bundle myBund = getArguments();
-            Toast.makeText(getActivity(), "User loged in with user ID " + Objects.requireNonNull(myBund).getString("userID"), Toast.LENGTH_SHORT).show();
+            userIDForTicket = Objects.requireNonNull(myBund).getString("userID");
         } catch (NullPointerException e)
         {
             Log.e("BUNDLE_DATA", e.getMessage());

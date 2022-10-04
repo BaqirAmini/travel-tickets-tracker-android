@@ -2,9 +2,12 @@ package com.example.a303bus;
 
 public class TicketsDataModel {
     private Double ticketPrice;
-    private int ticketID;
+    private int ticketID, userID;
     private String  fromWhere, toWhere, depTime, depDate, ticketCompany;
 
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
     public void setTicketPrice(Double ticketPrice) {
         this.ticketPrice = ticketPrice;
     }
@@ -33,6 +36,9 @@ public class TicketsDataModel {
         this.ticketCompany = ticketCompany;
     }
 
+    public int getUserID() {
+        return userID;
+    }
     public double getTicketPrice() {
         return ticketPrice;
     }

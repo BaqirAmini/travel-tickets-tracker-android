@@ -46,6 +46,7 @@ public class BookTicketsActivity extends AppCompatActivity implements SearchView
     @SuppressLint("NotifyDataSetChanged")
     private void loadTicketsData() {
         Intent intentForBook = getIntent();
+        String userID = intentForBook.getStringExtra("USER_ID");
         String fromWhere = intentForBook.getStringExtra("FROM_WHERE");
         String toWhere = intentForBook.getStringExtra("TO_WHERE");
         String depDate = intentForBook.getStringExtra("DEP_DATE");
@@ -63,6 +64,7 @@ public class BookTicketsActivity extends AppCompatActivity implements SearchView
             if (cursor.getCount() > 0) {
                 do {
                     TicketsDataModel tdm = new TicketsDataModel();
+                    tdm.setUserID(Integer.parseInt(userID));
                     tdm.setTicketID(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow("ticket_ID"))));
                     tdm.setFromWhere(cursor.getString(cursor.getColumnIndexOrThrow("source")));
                     tdm.setToWhere(cursor.getString(cursor.getColumnIndexOrThrow("destination")));

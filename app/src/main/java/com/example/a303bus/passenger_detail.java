@@ -92,6 +92,7 @@ public class passenger_detail extends AppCompatActivity {
         edcvv = findViewById(R.id.edcvv);
         edmmyy = findViewById(R.id.edmmyy);
 
+        Toast.makeText(this, "User ID for passenger " + pasIntent.getStringExtra("USER_ID"), Toast.LENGTH_SHORT).show();
 //        Declare variables to store values of editTextes
         firstName = edFirsname.getText().toString();
         lastName = edlastname.getText().toString();
@@ -186,60 +187,6 @@ public class passenger_detail extends AppCompatActivity {
                 onSubmit();
             }
         }
-
-
-        /*if (firstName.isEmpty()) {
-            edFirsname.setError("First Name required.");
-        } else if (firstName.length() < 3) {
-            edFirsname.setError("First Name must be at least 3 characters.");
-        }
-        if (!lastName.isEmpty()) {
-            if (lastName.length() < 3) {
-                edlastname.setError("Last Name must be at least 3 characters.");
-            }
-        }
-
-        if (phone.isEmpty()) {
-            edphone.setError("Phone required.");
-        } else if (phone.length() < 10 || phone.length() > 13) {
-            edphone.setError("Phone cannot be lower than 10 or greater than 13 digits");
-        }
-        if (tazkiraID.isEmpty()) {
-            edidcardno.setError("Tazkira ID required.");
-        } else if (tazkiraID.length() != 13) {
-            edidcardno.setError("Tazkira ID must contain 13 digits.");
-        }
-        if (eCard.isEmpty()) {
-            edcardno.setError("Card number required.");
-        } else if (eCard.length() != 16) {
-            edcardno.setError("Card number must be 16 digits.");
-        }
-        if (cvv.isEmpty()) {
-            edcvv.setError("CVV of the e-card required.");
-        } else if (cvv.length() < 3 || cvv.length() > 4) {
-            edcvv.setError("CVV can be 3 or 4 digits.");
-        }
-        if (dateInput.isEmpty()) {
-            edmmyy.setError("The card exp date required.");
-        } else if (!formattedDate) {
-            edmmyy.setError("The card exp date must be MM/YY.");
-        }
-
-        if (!firstName.isEmpty()
-                && !(firstName.length() < 3)
-                && !phone.isEmpty()
-                && !cvv.isEmpty()
-                && !tazkiraID.isEmpty()
-                && !eCard.isEmpty()
-                && !dateInput.isEmpty()
-                && !(phone.length() < 10 || phone.length() > 13)
-                && (tazkiraID.length() == 13)
-                && eCard.length() == 16
-                && !(cvv.length() < 3 || cvv.length() > 4)
-                && formattedDate) {
-//            Call this method in order to submit the data.
-            onSubmit();
-        }*/
     }
 
     //    Submit all passenger values

@@ -48,10 +48,6 @@ public class home extends AppCompatActivity {
                         bundle.putString("user_email", userEmail);
                         bundle.putString("user_phone", userPhone);
                         fragment.setArguments(bundle);
-                      /*  FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.frame_for_user, fragment);
-                        ft.addToBackStack(null);
-                        ft.commit();*/
                         break;
                     case R.id.about:
                         fragment=new aboutFragment();
