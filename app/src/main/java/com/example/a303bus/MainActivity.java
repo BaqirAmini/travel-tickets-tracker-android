@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             cursor.moveToFirst();
 
             if (cursor.getCount() > 0) {
-                String user_role = cursor.getString(cursor.getColumnIndexOrThrow("role"));
+                String user_id = cursor.getString(cursor.getColumnIndexOrThrow("user_id"));
                 String user_phone = cursor.getString(cursor.getColumnIndexOrThrow("phone"));
                 String user_name = cursor.getString(cursor.getColumnIndexOrThrow("user_name"));
                 String user_email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 edemail.setText("");
                 edpassword.setText("");
                 Intent intent = new Intent(MainActivity.this, home.class);
+                intent.putExtra("USER_ID", user_id);
                 intent.putExtra("USER_NAME", user_name);
                 intent.putExtra("USER_EMAIL", user_email);
                 intent.putExtra("USER_PHONE", user_phone);

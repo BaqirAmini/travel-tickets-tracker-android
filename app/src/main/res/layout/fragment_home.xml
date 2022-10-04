@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@+id/titlehome" />
 
         <EditText
-            android:id="@+id/edto"
+            android:id="@+id/ed_user_to"
             android:layout_width="330dp"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
@@ -59,10 +59,10 @@
             android:textColorHint="@color/blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edfrom" />
+            app:layout_constraintTop_toBottomOf="@+id/ed_user_from" />
 
         <EditText
-            android:id="@+id/edfrom"
+            android:id="@+id/ed_user_from"
             android:layout_width="330dp"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
@@ -82,7 +82,7 @@
             app:layout_constraintTop_toBottomOf="@+id/subtitlehome" />
 
         <Button
-            android:id="@+id/btnsearch"
+            android:id="@+id/btnSearchUser"
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
@@ -97,10 +97,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtdate1" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_user_dep_date" />
 
         <TextView
-            android:id="@+id/txtdate1"
+            android:id="@+id/txt_user_dep_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="184dp"
@@ -112,7 +112,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edto" />
+            app:layout_constraintTop_toBottomOf="@+id/ed_user_to" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>>

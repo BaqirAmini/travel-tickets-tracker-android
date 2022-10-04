@@ -45,16 +45,15 @@ public class BookTicketsActivity extends AppCompatActivity implements SearchView
 
     @SuppressLint("NotifyDataSetChanged")
     private void loadTicketsData() {
-        Intent schIntent = getIntent();
-        String fromWhere = schIntent.getStringExtra("FROM_WHERE");
-        String toWhere = schIntent.getStringExtra("TO_WHERE");
-        String depDate = schIntent.getStringExtra("DEP_DATE");
+        Intent intentForBook = getIntent();
+        String fromWhere = intentForBook.getStringExtra("FROM_WHERE");
+        String toWhere = intentForBook.getStringExtra("TO_WHERE");
+        String depDate = intentForBook.getStringExtra("DEP_DATE");
         try {
             if (Build.VERSION.SDK_INT >= 23) {
                 ExternalStoragePermission.verifyStoragePermissions(this);
             }
-//            String searchQuery = "SELECT * FROM tickets WHERE source LIKE '%" + fromWhere.trim() + "%' AND destination LIKE '%" + toWhere.trim() + "%' AND dep_date = '" + depDate.trim() + "';";
-            String searchQuery = "SELECT * FROM tickets";
+            String searchQuery = "SELECT * FROM tickets WHERE source LIKE '%" + fromWhere.trim() + "%' AND destination LIKE '%" + toWhere.trim() + "%' AND dep_date = '" + depDate.trim() + "';";
             File inStorage = getBaseContext().getExternalFilesDir(null);
             String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
 
