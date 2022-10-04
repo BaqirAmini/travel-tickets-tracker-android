@@ -20,7 +20,7 @@ public class profileFragment extends Fragment {
     TextView name, email, phone;
     String myname, myemail;
     int myphone;
-    Button logout, btnAdmin, btnLogin;
+    Button logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +30,12 @@ public class profileFragment extends Fragment {
         email = (TextView) view.findViewById(R.id.txtemail);
         phone = (TextView) view.findViewById(R.id.txtphone);
         logout = (Button) view.findViewById(R.id.logout3);
+
+//        Bundle to get user info
+        Bundle bundle = getArguments();
+        name.setText(Objects.requireNonNull(bundle).getString("user_name"));
+        email.setText(Objects.requireNonNull(bundle).getString("user_email"));
+        phone.setText(Objects.requireNonNull(bundle).getString("user_phone"));
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
