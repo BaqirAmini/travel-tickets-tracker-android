@@ -63,8 +63,7 @@ public class admin_dashboard extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnlogout:
-                Toast.makeText(getContext(), "logout", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(requireActivity(), spalsh.class);
+                Intent intent = new Intent(requireActivity(), admin_login.class);
                 startActivity(intent);
                 requireActivity().finish();
                 break;

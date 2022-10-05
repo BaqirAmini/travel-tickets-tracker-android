@@ -65,8 +65,10 @@ public class BookTicketsActivity extends AppCompatActivity implements SearchView
                 TicketsDataModel tdm = new TicketsDataModel();
                 do {
                     tdm.setUserID(Integer.parseInt(userID));
+                    tdm.setTickNO(cursor.getString(cursor.getColumnIndexOrThrow("ticket_NO")));
                     tdm.setTicketID(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow("ticket_ID"))));
                     tdm.setFromWhere(cursor.getString(cursor.getColumnIndexOrThrow("source")));
+                    tdm.setTicketCompany(cursor.getString(cursor.getColumnIndexOrThrow("transport_company")));
                     tdm.setToWhere(cursor.getString(cursor.getColumnIndexOrThrow("destination")));
                     tdm.setTicketPrice(Double.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("price"))));
                     tdm.setDepDate(cursor.getString(cursor.getColumnIndexOrThrow("dep_date")));

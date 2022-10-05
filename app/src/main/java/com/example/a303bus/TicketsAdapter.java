@@ -87,7 +87,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
                         ticketsList.get(holder.getAdapterPosition());
                         ticketsList.remove(holder.getAdapterPosition());
                         notifyDataSetChanged();
-                        Toast.makeText(context, "The ticket deleted." + deleted, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "The ticket deleted.", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     Log.e("DELETE_ERROR", "Cannot delete from tickets: " + e.getMessage());

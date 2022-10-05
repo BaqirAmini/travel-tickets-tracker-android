@@ -31,7 +31,6 @@
                 android:layout_marginStart="44dp"
                 android:layout_marginTop="16dp"
                 android:text="BUS COMPANY"
-
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +44,7 @@
                 android:layout_marginEnd="248dp"
                 android:text="Hesarak"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="15sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +59,7 @@
                 android:layout_marginEnd="28dp"
                 android:text="OCT-10-2022"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent" />

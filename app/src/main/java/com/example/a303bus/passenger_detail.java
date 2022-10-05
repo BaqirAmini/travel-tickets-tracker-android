@@ -34,7 +34,7 @@ public class passenger_detail extends AppCompatActivity {
     EditText edFirsname, edlastname, edphone, edcardno, edcvv, edmmyy, edidcardno;
     RadioButton visaRadio, mastercardRaio, cashRadio;
     RadioGroup rg;
-    String firstName, lastName, phone, tazkiraID, eCard, cvv, dateInput, payMethod = "Cash";
+    String ticketNO, ticketComp, source, depDate, depTime, destination, firstName, lastName, phone, tazkiraID, eCard, cvv, dateInput, payMethod = "Cash";
     Button btnSubmit;
     boolean formattedDate;
     int ticketID, userID;
@@ -191,9 +191,19 @@ public class passenger_detail extends AppCompatActivity {
 
     //    Submit all passenger values
     private void onSubmit() {
+
+       Intent tnIntent = getIntent();
+       ticketNO = tnIntent.getStringExtra("TICKET_NO");
+       ticketComp = tnIntent.getStringExtra("BUS_COMPANY");
+       source = tnIntent.getStringExtra("SOURCE");
+       destination = tnIntent.getStringExtra("DEST");
+       depDate = tnIntent.getStringExtra("DATE");
+       depTime = tnIntent.getStringExtra("TIME");
+
         if (Build.VERSION.SDK_INT >= 23) {
             ExternalStoragePermission.verifyStoragePermissions(this);
         }
+        Toast.makeText(this, "Ticket no in passenger " + ticketNO, Toast.LENGTH_SHORT).show();
         try {
             File inStorage = (passenger_detail.this).getExternalFilesDir(null);
             String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
@@ -213,6 +223,16 @@ public class passenger_detail extends AppCompatActivity {
             values.put("ticket_ID_FK", ticketID);
             bus_db.insert("passengers", null, values);
             Toast.makeText(passenger_detail.this, "Submit was success!", Toast.LENGTH_LONG).show();
+            Intent tctGenIntent = new Intent(passenger_detail.this, e_ticket.class);
+            tctGenIntent.putExtra("TICKET_NO", ticketNO);
+            tctGenIntent.putExtra("TCT_COMP", ticketComp);
+            tctGenIntent.putExtra("FIRST_NAME", firstName);
+            tctGenIntent.putExtra("LAST_NAME", lastName);
+            tctGenIntent.putExtra("PFROM", source);
+            tctGenIntent.putExtra("PTO", destination);
+            tctGenIntent.putExtra("PDATE", depDate);
+            tctGenIntent.putExtra("PTIME", depTime);
+            startActivity(tctGenIntent);
             edFirsname.setText("");
             edlastname.setText("");
             edphone.setText("");
@@ -220,6 +240,7 @@ public class passenger_detail extends AppCompatActivity {
             edcardno.setText("");
             edcvv.setText("");
             edmmyy.setText("");
+
         } catch (Exception e) {
             Log.e("PASS_INSERT_INFO", "Could not insert passengers info " + e.getMessage());
         }

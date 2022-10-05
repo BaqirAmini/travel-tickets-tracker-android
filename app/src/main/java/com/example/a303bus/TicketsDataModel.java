@@ -3,17 +3,22 @@ package com.example.a303bus;
 public class TicketsDataModel {
     private Double ticketPrice;
     private int ticketID, userID;
-    private String  fromWhere, toWhere, depTime, depDate, ticketCompany;
+    private String ticketNO, fromWhere, toWhere, depTime, depDate, ticketCompany;
 
     public void setUserID(int userID) {
         this.userID = userID;
     }
+
     public void setTicketPrice(Double ticketPrice) {
         this.ticketPrice = ticketPrice;
     }
 
     public void setTicketID(int ticketID) {
         this.ticketID = ticketID;
+    }
+
+    public void setTickNO(String ticketNO) {
+        this.ticketNO = ticketNO;
     }
 
     public void setFromWhere(String fromWhere) {
@@ -39,12 +44,17 @@ public class TicketsDataModel {
     public int getUserID() {
         return userID;
     }
+
     public double getTicketPrice() {
         return ticketPrice;
     }
 
     public int getTicketID() {
         return ticketID;
+    }
+
+    public String getTicketNO() {
+        return ticketNO;
     }
 
     public String getFromWhere() {

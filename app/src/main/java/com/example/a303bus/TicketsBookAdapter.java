@@ -48,8 +48,14 @@ public class TicketsBookAdapter extends RecyclerView.Adapter<TicketsBookAdapter.
             public void onClick(View view) {
                Intent intent = new Intent(view.getContext(), passenger_detail.class);
                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-               intent.putExtra("TICKET_ID", modal.getTicketID());
+               intent.putExtra("TICKET_ID", modal.getTicketID()); // Ticket ID is the primary key with tickets table
+               intent.putExtra("TICKET_NO", modal.getTicketNO()); // Ticket NO is generated randomly which is printed on layouts
                intent.putExtra("USER_ID", modal.getUserID());
+               intent.putExtra("BUS_COMPANY", modal.getTicketCompany());
+               intent.putExtra("SOURCE", modal.getFromWhere());
+               intent.putExtra("DEST", modal.getToWhere());
+               intent.putExtra("DATE", modal.getDepDate());
+               intent.putExtra("TIME", modal.getDepTime());
                view.getContext().startActivity(intent);
             }
         });
