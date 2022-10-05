@@ -41,7 +41,7 @@ public class TicketsBookAdapter extends RecyclerView.Adapter<TicketsBookAdapter.
         holder.depPlaceName.setText(modal.getFromWhere());
         holder.depTime.setText(modal.getDepDate() + " At " + modal.getDepTime());
         holder.depToPlaceName.setText(modal.getToWhere());
-
+        holder.depTctPrice.setText(modal.getTicketPrice() + " AFN");
         //Book a ticket
         holder.btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +78,7 @@ public class TicketsBookAdapter extends RecyclerView.Adapter<TicketsBookAdapter.
         TextView depToPlaceName;
         TextView depTctPriceLbl;
         TextView depTctPrice;
-        TextView tctCompLbl;
-        TextView tctCompName;
         TextView btnBook;
-        TextView btnDelete;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -94,10 +91,6 @@ public class TicketsBookAdapter extends RecyclerView.Adapter<TicketsBookAdapter.
             depTctPriceLbl = itemView.findViewById(R.id.txt_price_lbl);
             depTctPrice = itemView.findViewById(R.id.txt_price_amount);
             btnBook = itemView.findViewById(R.id.btn_book_by_user);
-//            btnBook = itemView.findViewById(R.id.btnupdete);
-//            btnDelete = itemView.findViewById(R.id.btndelete);
-
-
         }
     }
 
