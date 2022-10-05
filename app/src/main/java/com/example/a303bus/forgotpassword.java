@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,38 +55,61 @@ public class forgotpassword extends AppCompatActivity {
         userName = edname.getText().toString();
         userEmail = edemail.getText().toString();
         userNewPwd = edpassword.getText().toString();
-        if (!userName.isEmpty() && !userEmail.isEmpty() && !userNewPwd.isEmpty()) {
-            if (edpassword.length() < 6) {
-                edpassword.setError("Password must be at least 6 characters.");
-            } else {
-                if (Build.VERSION.SDK_INT >= 23) {
-                    ExternalStoragePermission.verifyStoragePermissions(this);
-                }
-                File inStorage = getBaseContext().getExternalFilesDir(null);
-                String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
+//        if (!userName.isEmpty() && !userEmail.isEmpty() && !userNewPwd.isEmpty()) {
+            if (userName.isEmpty())
+            {
+                edname.setError("Username required.");
+            }
+            if (userEmail.isEmpty())
+            {
+                edemail.setError("Email required.");
+            }
 
-                SQLiteDatabase bus303_db = SQLiteDatabase.openDatabase(desPath + "/303bus_db.sqlite", null, 0);
-                Cursor cursor = bus303_db.rawQuery("SELECT * FROM users WHERE user_name = '" + userName + "' AND email = '" + userEmail + "'", null);
-                cursor.moveToFirst();
-                if (cursor.getCount() > 0) {
-                    ContentValues values = new ContentValues();
-                    values.put("password", userNewPwd);
-                    bus303_db.update("users", values, "email = ?", new String[]{userEmail});
-                    edname.setText("");
-                    edemail.setText("");
-                    edpassword.setText("");
-                    Toast.makeText(this, "Password reset successfully!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(forgotpassword.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(this, "Incorrect username or email.", Toast.LENGTH_SHORT).show();
+            if (userNewPwd.isEmpty())
+            {
+                edpassword.setError("Password required.");
+            } else if (userNewPwd.length() < 6)
+            {
+                edpassword.setError("Password must be at least 6 characters.");
+            }
+
+            if (!userName.isEmpty() && !userEmail.isEmpty() && !userNewPwd.isEmpty() && !(userNewPwd.length() < 6))
+
+            {
+                try {
+                    if (Build.VERSION.SDK_INT >= 23) {
+                        ExternalStoragePermission.verifyStoragePermissions(this);
+                    }
+                    File inStorage = getBaseContext().getExternalFilesDir(null);
+                    String desPath = inStorage.getAbsolutePath() + "/bus303/database/";
+
+                    SQLiteDatabase bus303_db = SQLiteDatabase.openDatabase(desPath + "/303bus_db.sqlite", null, 0);
+                    Cursor cursor = bus303_db.rawQuery("SELECT * FROM users WHERE user_name = '" + userName.trim() + "' AND email = '" + userEmail.trim() + "'", null);
+                    cursor.moveToFirst();
+                    if (cursor.getCount() > 0) {
+                        ContentValues values = new ContentValues();
+                        values.put("password", userNewPwd);
+                        bus303_db.update("users", values, "email = ?", new String[]{userEmail});
+                        edname.setText("");
+                        edemail.setText("");
+                        edpassword.setText("");
+                        Toast.makeText(this, "Password reset successfully!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(forgotpassword.this, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(this, "Incorrect username or email.", Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (Exception e)
+                {
+                    Log.e("PASSWORD_RESET", "Cannot reset password since ");
                 }
             }
-        } else {
-            edname.setError("Username is required.");
-            edemail.setError("Email is required.");
-            edpassword.setError("New password is required.");
-        }
+
+
+
+
+
 
     }
 }
