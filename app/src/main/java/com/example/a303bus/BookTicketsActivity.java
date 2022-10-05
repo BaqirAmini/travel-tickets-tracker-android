@@ -62,8 +62,8 @@ public class BookTicketsActivity extends AppCompatActivity implements SearchView
             Cursor cursor = db.rawQuery(searchQuery, null);
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
+                TicketsDataModel tdm = new TicketsDataModel();
                 do {
-                    TicketsDataModel tdm = new TicketsDataModel();
                     tdm.setUserID(Integer.parseInt(userID));
                     tdm.setTicketID(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow("ticket_ID"))));
                     tdm.setFromWhere(cursor.getString(cursor.getColumnIndexOrThrow("source")));

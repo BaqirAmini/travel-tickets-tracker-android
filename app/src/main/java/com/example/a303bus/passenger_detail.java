@@ -37,7 +37,7 @@ public class passenger_detail extends AppCompatActivity {
     String firstName, lastName, phone, tazkiraID, eCard, cvv, dateInput, payMethod = "Cash";
     Button btnSubmit;
     boolean formattedDate;
-    int ticketID;
+    int ticketID, userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +83,7 @@ public class passenger_detail extends AppCompatActivity {
 
     private void onvalidate() {
         Intent pasIntent = getIntent();
+        userID = pasIntent.getIntExtra("USER_ID", 0);
         ticketID = pasIntent.getIntExtra("TICKET_ID", 0);
         edFirsname = findViewById(R.id.pas_first_name);
         edlastname = findViewById(R.id.pas_last_name);
@@ -92,7 +93,6 @@ public class passenger_detail extends AppCompatActivity {
         edcvv = findViewById(R.id.edcvv);
         edmmyy = findViewById(R.id.edmmyy);
 
-        Toast.makeText(this, "User ID for passenger " + pasIntent.getStringExtra("USER_ID"), Toast.LENGTH_SHORT).show();
 //        Declare variables to store values of editTextes
         firstName = edFirsname.getText().toString();
         lastName = edlastname.getText().toString();
@@ -208,6 +208,7 @@ public class passenger_detail extends AppCompatActivity {
                 values.put("CVV", cvv);
                 values.put("expiry_date", dateInput);
             }
+            values.put("user_ID_FK", userID);
             values.put("payment", payMethod);
             values.put("ticket_ID_FK", ticketID);
             bus_db.insert("passengers", null, values);
